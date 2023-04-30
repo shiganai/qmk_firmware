@@ -16,10 +16,10 @@ enum custom_keycodes {
   ADJUST,
   Tg_IME,
   KC_WLC,	//Windows-Like Control. Basically work as LGUI(Command). When arrow button pressed, work as Ctrl.
-  MC_LEFT,	//Left arrow working with KC_WLRW
-  MC_RGHT,	//Right arrow working with KC_WLRW
-  MC_UP,	//Up arrow working with KC_WLRW
-  MC_DOWN,	//Down arrow working with KC_WLRW
+  MC_LEFT,	//Left arrow working with KC_WLC
+  MC_RGHT,	//Right arrow working with KC_WLC
+  MC_UP,	//Up arrow working with KC_WLC
+  MC_DOWN,	//Down arrow working with KC_WLC
 };
 
 #define EISU LALT(KC_GRV)
@@ -107,8 +107,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MacQWERTY] = LAYOUT(
     KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_LBRC,                        KC_RBRC, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
     KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_SLSH,                        KC_EQL , KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_CAPS,                        KC_DEL , KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_UP  , KC_BSPC,
-    KC_WLC , KC_LCTL, KC_LALT, Tg_IME,           McFUN,   KC_SPC, KC_MINS,        KC_RSFT,KC_ENT , McNUM,            KC_APP , MC_LEFT, KC_DOWN, MC_RGHT
+    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_CAPS,                        KC_DEL , KC_N,    KC_M,    KC_COMM, KC_DOT,  MC_UP  , KC_BSPC,
+    KC_WLC , KC_LCTL, KC_LALT, Tg_IME,           McFUN,   KC_SPC, KC_MINS,        KC_RSFT,KC_ENT , McNUM,            KC_APP , MC_LEFT, MC_DOWN, MC_RGHT
   ),
   
   // NOTE: Need to duplicate Number and Function layers for Mac because the original ones won't be activated via _MacBase layer.
@@ -201,6 +201,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         unregister_code(KC_RGHT);
         if (WLC) {
           unregister_code(RLarrow_special_WLC);
+          register_code(default_WLC);
+        }
+      }
+      return false;
+      break;
+      
+    case MC_UP:
+      if (record->event.pressed) {
+        if (WLC) {
+          unregister_code(default_WLC);
+        }
+        register_code(KC_UP);
+      } else {
+        unregister_code(KC_UP);
+        if (WLC) {
+          register_code(default_WLC);
+        }
+      }
+      return false;
+      break;
+      
+    case MC_DOWN:
+      if (record->event.pressed) {
+        if (WLC) {
+          unregister_code(default_WLC);
+        }
+        register_code(KC_DOWN);
+      } else {
+        unregister_code(KC_DOWN);
+        if (WLC) {
           register_code(default_WLC);
         }
       }
