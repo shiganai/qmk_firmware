@@ -15,10 +15,10 @@ enum custom_keycodes {
   QWERTY = SAFE_RANGE,
   ADJUST,
   Tg_IME,
-  KC_WLC,	//Windows-Like Control. Basically work as LGUI(Command). When arrow button pressed, work as Ctrl.
+  KC_WLC,   //Windows-Like Control. Basically work as LGUI(Command). When arrow button pressed, work as Ctrl.
   MC_LEFT,	//Left arrow working with KC_WLC
   MC_RGHT,	//Right arrow working with KC_WLC
-  MC_UP,	//Up arrow working with KC_WLC
+  MC_UP,	  //Up arrow working with KC_WLC
   MC_DOWN,	//Down arrow working with KC_WLC
 };
 
@@ -158,8 +158,28 @@ static bool WLC = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
+    
+    // For Mac IME
+    case Tg_IME:
+      if (record->event.pressed) {
+        if (IME) {
+          register_code(KC_LNG1);
+        } else {
+          register_code(KC_LNG2);
+        }
+        
+      } else {
+        if (IME) {
+          unregister_code(KC_LNG1);
+        } else {
+          unregister_code(KC_LNG2);
+        }
+        IME = !IME;
+      }
+      return false;
+      break;
   
-    // For Mac Right and Left Customize
+    // For Mac Arrow Key Customize
     case KC_WLC:
       if (record->event.pressed) {
         // Turn on WLC flag so that MC_LEFT and MC_RGHT is aware of which action to take.
@@ -233,27 +253,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (WLC) {
           register_code(default_WLC);
         }
-      }
-      return false;
-      break;
-      
-      
-    // For IME
-    case Tg_IME:
-      if (record->event.pressed) {
-        if (IME) {
-          register_code(KC_LNG1);
-        } else {
-          register_code(KC_LNG2);
-        }
-        
-      } else {
-        if (IME) {
-          unregister_code(KC_LNG1);
-        } else {
-          unregister_code(KC_LNG2);
-        }
-        IME = !IME;
       }
       return false;
       break;
