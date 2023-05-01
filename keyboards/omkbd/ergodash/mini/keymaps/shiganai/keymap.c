@@ -33,8 +33,8 @@ enum custom_keycodes {
 
 #define MC_HOME LGUI(KC_LEFT)	//Home for Mac
 #define MC_END LGUI(KC_RGHT)	//End for Mac
-#define MC_PGUP LGUI(KC_UP)	//PageUP for Mac
-#define MC_PGDN LGUI(KC_DOWN)	//PageDown for Mac
+#define MC_PGUP LALT(KC_PGUP)	//PageUP for Mac
+#define MC_PGDN LALT(KC_PGDN)	//PageDown for Mac
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
