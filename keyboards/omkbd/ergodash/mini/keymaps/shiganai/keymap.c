@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_FNCTN] = LAYOUT(
     KC_GRV , KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_LCBR,                        KC_RCBR, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PIPE,
     SwMac,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_QUES,                        KC_PLUS, KC_H,    KC_J,    KC_K,    KC_L,    KC_COLN, KC_DQUO,
-    KC_LSFT, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_CAPS,                        KC_DEL , KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_PGUP, KC_BSPC,
+    KC_LSFT, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_CAPS,                        KC_DEL , KC_N,    KC_M,    KC_LT,   KC_GT,   KC_PGUP, KC_BSPC,
     KC_LCTL, KC_F11 , KC_F12,  SwWin,            FNCTN,   KC_SPC ,KC_MINS,        KC_RSFT,KC_ENT , NUMBR,            KC_APP , KC_HOME, KC_PGDN, KC_END
     ),
 
