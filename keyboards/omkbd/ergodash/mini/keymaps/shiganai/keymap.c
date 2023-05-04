@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,----------------------------------------------------------------------------------------------------------------------.
    * |   `  |   !  |   @  |   #  |   $  |   %  |   {  |                    |   }  |   ^  |   &  |   *  |   (  |   )  |  |   |
    * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
-   * |   ~  |   1  |   2  |   3  |   4  |   5  |   ?  |                    |   =  |   H  |   J  |   K  |   L  |   :  |  "   |
+   * |   ~  |   1  |   2  |   3  |   4  |   5  |   /\  |                    |   =  |   H  |   J  |   K  |   L  |   :  |  "   |
    * |------+------+------+------+------+------+---------------------------+------+------+------+------+------+------+------|
    * | Shift|   6  |   7  |   8  |   9  |   0  | CAPSL|                    |Delete|   N  |   M  |   ,  |   .  |PageUp| Bksp |
    * |-------------+------+------+------+------+------+------+------+------+------+------+------+------+------+-------------|
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [_NUMBR] = LAYOUT(
     KC_GRV , KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_LCBR,                        KC_RCBR, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PIPE,
-    KC_TILD, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_QUES,                        KC_EQL , KC_H,    KC_J,    KC_K,    KC_L,    KC_COLN, KC_DQUO,
+    KC_TILD, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_SLSH,                        KC_EQL , KC_H,    KC_J,    KC_K,    KC_L,    KC_COLN, KC_DQUO,
     KC_LSFT, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_CAPS,                        KC_DEL , KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_PGUP, KC_BSPC,
     KC_LCTL, KC_LGUI, KC_LALT, EISU,             FNCTN,   KC_SPC ,KC_MINS,        KC_RSFT,KC_ENT , NUMBR,            KC_APP , KC_HOME, KC_PGDN, KC_END
   ),
@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,----------------------------------------------------------------------------------------------------------------------.
    * |   `  |   !  |   @  |   #  |   $  |   %  |   {  |                    |   }  |   ^  |   &  |   *  |   (  |   )  |  |   |
    * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
-   * |   ~  |   1  |   2  |   3  |   4  |   5  |   ?  |                    |   =  |   H  |   J  |   K  |   L  |   :  |  "   |
+   * |   ~  |   1  |   2  |   3  |   4  |   5  |   /  |                    |   =  |   H  |   J  |   K  |   L  |   :  |  "   |
    * |------+------+------+------+------+------+---------------------------+------+------+------+------+------+------+------|
    * | Shift|   6  |   7  |   8  |   9  |   0  | CAPSL|                    |Delete|   N  |   M  |   ,  |   .  |PageUp| Bksp |
    * |-------------+------+------+------+------+------+------+------+------+------+------+------+------+------+-------------|
@@ -126,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [_MacNUMBR] = LAYOUT(
     KC_GRV , KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_LCBR,                        KC_RCBR, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PIPE,
-    KC_TILD, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_QUES,                        KC_EQL , KC_H,    KC_J,    KC_K,    KC_L,    KC_COLN, KC_DQUO,
+    KC_TILD, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_SLSH,                        KC_EQL , KC_H,    KC_J,    KC_K,    KC_L,    KC_COLN, KC_DQUO,
     KC_LSFT, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_CAPS,                        KC_DEL , KC_N,    KC_M,    KC_COMM, KC_DOT,  MC_PGUP, KC_BSPC,
     KC_WLC, KC_LCTL, KC_LALT, Tg_IME,           McFUN,   KC_SPC ,KC_MINS,        KC_RSFT,KC_ENT , McNUM,            KC_APP , MC_HOME, MC_PGDN, MC_END
   ),
@@ -135,17 +135,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,----------------------------------------------------------------------------------------------------------------------.
    * |   `  |   !  |   @  |   #  |   $  |   %  |   {  |                    |   }  |   ^  |   &  |   *  |   (  |   )  |  |   |
    * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
-   * | SwMac|   F1 |   F2 |   F3 |   F4 |   F5 |   ?  |                    |   =  |   H  |   J  |   K  |   L  |   :  |  "   |
+   * | SwMac|   F1 |   F2 |   F3 |   F4 |   F5 |   ?  |                    |   +  |   H  |   J  |   K  |   L  |   :  |  "   |
    * |------+------+------+------+------+------+---------------------------+------+------+------+------+------+------+------|
-   * | Shift|   F6 |   F7 |   F8 |   F9 |  F10 | CAPSL|                    |Delete|   N  |   M  |   ,  |   .  |PageUp| Bksp |
+   * | Shift|   F6 |   F7 |   F8 |   F9 |  F10 | CAPSL|                    |Delete|   N  |   M  |   <  |   >  |PageUp| Bksp |
    * |-------------+------+------+------+------+------+------+------+------+------+------+------+------+------+-------------|
    * | Ctrl |  F11 |  F12 | SwWin|||||||| Fnctn| Space|   -  |||||||| Shift| Enter| Numbr|||||||| Menu | Home |PageDn|  End |
    * ,----------------------------------------------------------------------------------------------------------------------.
    */
   [_MacFNCTN] = LAYOUT(
     KC_GRV , KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_LCBR,                        KC_RCBR, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PIPE,
-    SwMac,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_QUES,                        KC_EQL , KC_H,    KC_J,    KC_K,    KC_L,    KC_COLN, KC_DQUO,
-    KC_LSFT, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_CAPS,                        KC_DEL , KC_N,    KC_M,    KC_COMM, KC_DOT,  MC_PGUP, KC_BSPC,
+    SwMac,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_QUES,                        KC_PLUS, KC_H,    KC_J,    KC_K,    KC_L,    KC_COLN, KC_DQUO,
+    KC_LSFT, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_CAPS,                        KC_DEL , KC_N,    KC_M,    KC_LT,   KC_GT,   MC_PGUP, KC_BSPC,
     KC_WLC, KC_F11 , KC_F12,  SwWin,            McFUN,   KC_SPC ,KC_MINS,        KC_RSFT,KC_ENT , McNUM,            KC_APP , MC_HOME, MC_PGDN, MC_END
     ),
 };
