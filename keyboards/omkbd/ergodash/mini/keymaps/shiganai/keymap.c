@@ -79,16 +79,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,----------------------------------------------------------------------------------------------------------------------.
    * |   `  |   !  |   @  |   #  |   $  |   %  |   {  |                    |   }  |   ^  |   &  |   *  |   (  |   )  |  |   |
    * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
-   * | SwMac|   F1 |   F2 |   F3 |   F4 |   F5 |   ?  |                    |   =  |   H  |   J  |   K  |   L  |   ;  |  "   |
+   * | SwMac|   F1 |   F2 |   F3 |   F4 |   F5 |   ?  |                    |   +  |   H  |   J  |   K  |   L  |   :  |  "   |
    * |------+------+------+------+------+------+---------------------------+------+------+------+------+------+------+------|
-   * | Shift|   F6 |   F7 |   F8 |   F9 |  F10 | CAPSL|                    |Delete|   N  |   M  |   ,  |   .  |PageUp| Bksp |
+   * | Shift|   F6 |   F7 |   F8 |   F9 |  F10 | CAPSL|                    |Delete|   N  |   M  |   <  |   >  |PageUp| Bksp |
    * |-------------+------+------+------+------+------+------+------+------+------+------+------+------+------+-------------|
    * | Ctrl |  F11 |  F12 | SwWin|||||||| Fnctn| Space|   -  |||||||| Shift| Enter| Numbr|||||||| Menu | Home |PageDn|  End |
    * ,----------------------------------------------------------------------------------------------------------------------.
    */
   [_FNCTN] = LAYOUT(
     KC_GRV , KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_LCBR,                        KC_RCBR, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PIPE,
-    SwMac,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_QUES,                        KC_EQL , KC_H,    KC_J,    KC_K,    KC_L,    KC_COLN, KC_DQUO,
+    SwMac,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_QUES,                        KC_PLUS, KC_H,    KC_J,    KC_K,    KC_L,    KC_COLN, KC_DQUO,
     KC_LSFT, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_CAPS,                        KC_DEL , KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_PGUP, KC_BSPC,
     KC_LCTL, KC_F11 , KC_F12,  SwWin,            FNCTN,   KC_SPC ,KC_MINS,        KC_RSFT,KC_ENT , NUMBR,            KC_APP , KC_HOME, KC_PGDN, KC_END
     ),
