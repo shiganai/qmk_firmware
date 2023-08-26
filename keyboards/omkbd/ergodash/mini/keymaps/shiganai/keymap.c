@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTL, KC_F11 , KC_F12,  SwWin,            FNCTN,   KC_SPC ,KC_MINS,        KC_RSFT,KC_ENT , NUMBR,            KC_APP , KC_HOME, KC_PGDN, KC_END
     ),
 
-  /* MacQWERTY	
+  /* MacQWERTY
    * ,----------------------------------------------------------------------------------------------------------------------.
    * |  Esc |   Q  |   W  |   E  |   R  |   T  |   [  |                    |   ]  |   Y  |   U  |   I  |   O  |   P  |  \   |
    * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
@@ -110,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_CAPS,                        KC_DEL , KC_N,    KC_M,    KC_COMM, KC_DOT,  MC_UP  , KC_BSPC,
     KC_WLC , KC_LCTL, KC_LALT, Tg_IME,           McFUN,   KC_SPC, KC_MINS,        KC_RSFT,KC_ENT , McNUM,            KC_APP , MC_LEFT, MC_DOWN, MC_RGHT
   ),
-  
+
   // NOTE: Need to duplicate Number and Function layers for Mac because the original ones won't be activated via _MacBase layer.
 
   /* MacNumbr
@@ -158,7 +158,7 @@ static bool WLC = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    
+
     // For Mac IME
     case Tg_IME:
       if (record->event.pressed) {
@@ -167,7 +167,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         } else {
           register_code(KC_LNG2);
         }
-        
+
       } else {
         if (IME) {
           unregister_code(KC_LNG1);
@@ -178,7 +178,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-  
+
     // For Mac Arrow Key Customize
     case KC_WLC:
       if (record->event.pressed) {
@@ -192,7 +192,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-      
+
     case MC_LEFT:
       if (record->event.pressed) {
         if (WLC) {
@@ -202,14 +202,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         register_code(KC_LEFT);
       } else {
         unregister_code(KC_LEFT);
+        unregister_code(RLarrow_special_WLC);
         if (WLC) {
-          unregister_code(RLarrow_special_WLC);
           register_code(default_WLC);
         }
       }
       return false;
       break;
-      
+
     case MC_RGHT:
       if (record->event.pressed) {
         if (WLC) {
@@ -219,14 +219,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         register_code(KC_RGHT);
       } else {
         unregister_code(KC_RGHT);
+        unregister_code(RLarrow_special_WLC);
         if (WLC) {
-          unregister_code(RLarrow_special_WLC);
           register_code(default_WLC);
         }
       }
       return false;
       break;
-      
+
     case MC_UP:
       if (record->event.pressed) {
         if (WLC) {
@@ -241,7 +241,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-      
+
     case MC_DOWN:
       if (record->event.pressed) {
         if (WLC) {
